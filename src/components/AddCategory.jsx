@@ -14,7 +14,7 @@ export const AddCategory = ({ addCategory }) => {
             return
         }else{
             event.preventDefault();
-            addCategory( categories => [text ,...categories] );
+           addCategory( categories => [text ,...categories] );
            setText("");
        }
     }
