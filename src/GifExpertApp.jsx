@@ -26,12 +26,15 @@ export const Categories = () => {
 
     const addNewCategory = (event) => {
         console.log(event);
+        
+        if (inputCategory.includes(event)) return ;
+
         setCategory(category => [event,...category]);
     }
 
     const categoryList = inputCategory.map((item, index) => {
         return item === '' || item === null ? inputCategory.splice(index, 1) : (
-            <li key={index}>
+            <li key={item}>
                 {item}
             </li>
         );
@@ -43,6 +46,7 @@ export const Categories = () => {
             <AddCategory
                 // addCategory = { setCategory } 
                 onNewCategory={event => addNewCategory(event)}
+               
             />
             <ol>
                 {categoryList}

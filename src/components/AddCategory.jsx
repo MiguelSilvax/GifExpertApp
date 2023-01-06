@@ -11,11 +11,12 @@ export const AddCategory = ({ addCategory, onNewCategory }) => {
     const onFormSubmit = (event) => {
         if (text === "")
             return
-        else
+        else 
             event.preventDefault();
-        //    addCategory( categories => [text ,...categories] );
-        onNewCategory(text);
-        setText("");
+            //    addCategory( categories => [text ,...categories] );
+            onNewCategory(text);
+            setText("");
+        
     }
 
 
