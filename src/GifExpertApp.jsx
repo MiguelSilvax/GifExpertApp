@@ -22,12 +22,15 @@ import { AddCategory } from './components/AddCategory';
 
 export const Categories = () => {
 
-    const [inputCategory    , setCategory] = useState([""]);
+    const [inputCategory, setCategory] = useState([""]);
 
- 
+    const addNewCategory = (event) => {
+        console.log(event);
+        setCategory(category => [event,...category]);
+    }
 
     const categoryList = inputCategory.map((item, index) => {
-        return item === '' || item === null ? inputCategory.splice(index,1) : (
+        return item === '' || item === null ? inputCategory.splice(index, 1) : (
             <li key={index}>
                 {item}
             </li>
@@ -36,10 +39,13 @@ export const Categories = () => {
 
     return (
         <>
-            <h1>GifExpertApp</h1>
-            <AddCategory addCategory = { setCategory } />
+            <h1>Encuentra tu Gif</h1>
+            <AddCategory
+                // addCategory = { setCategory } 
+                onNewCategory={event => addNewCategory(event)}
+            />
             <ol>
-                { categoryList }
+                {categoryList}
             </ol>
         </>
     )

@@ -1,34 +1,34 @@
 import { useState } from 'react';
 
-export const AddCategory = ({ addCategory }) => {
+export const AddCategory = ({ addCategory, onNewCategory }) => {
 
     const [text, setText] = useState("")
 
-    const onChange  = ( {target} ) => {
-        // console.log(target.value);
+    const onChange = ({ target }) => {
         setText(target.value);
     }
 
-    const onFormSubmit = ( event ) => {
-        if (text === "") {
+    const onFormSubmit = (event) => {
+        if (text === "")
             return
-        }else{
+        else
             event.preventDefault();
-           addCategory( categories => [text ,...categories] );
-           setText("");
-       }
+        //    addCategory( categories => [text ,...categories] );
+        onNewCategory(text);
+        setText("");
     }
 
+
     return (
-        
-        <form onSubmit={ onFormSubmit }>
-              <input
-                  type="text"
-                  placeholder="Buscar gifs"
-                  value={text}
-                  onChange={ onChange }
-              />
-          </form>
-       
+
+        <form onSubmit={onFormSubmit}>
+            <input
+                type="text"
+                placeholder="Buscar gifs"
+                value={text}
+                onChange={onChange}
+            />
+        </form>
+
     );
 } 
