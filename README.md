@@ -1,2 +1,4 @@
 # GifExpertApp
-Nuevo proyecto realizado en React yarn
+proyecto creado : <b>yarn create vite<b>
+
+
