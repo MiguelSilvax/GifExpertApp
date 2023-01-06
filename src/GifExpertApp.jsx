@@ -10,7 +10,7 @@
  * o estado que se va ingresando en el input                                                                             |
  *                                                                                                                       |
  * En el método setCategory(), se usó el operador spread (...) para almacenar                                            |
- * los regristos en el anterior valor del @category                                                                      |
+ * los regristos en el anterior valor del @inputCategory                                                                      |
  *                                                                                                                       |                               |    
  * ----------------------------------------------------------------------------------------------------------------------
  */
@@ -19,38 +19,32 @@
 
 import { useState } from 'react'
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 export const Categories = () => {
 
-    const [inputCategory, setCategory] = useState([""]);
+    const [inputCategory, setCategory] = useState([]);
 
     const addNewCategory = (event) => {
-        console.log(event);
-        
-        if (inputCategory.includes(event)) return ;
-
-        setCategory(category => [event,...category]);
+        if (inputCategory.includes(event)) return;
+        setCategory(category => [event, ...category]);
     }
-
-    const categoryList = inputCategory.map((item, index) => {
-        return item === '' || item === null ? inputCategory.splice(index, 1) : (
-            <li key={item}>
-                {item}
-            </li>
-        );
-    });
 
     return (
         <>
             <h1>Encuentra tu Gif</h1>
+
             <AddCategory
-                // addCategory = { setCategory } 
                 onNewCategory={event => addNewCategory(event)}
-               
             />
-            <ol>
-                {categoryList}
-            </ol>
+
+            <div>
+                {
+                    inputCategory.map((item, index) => {
+                        return <GifGrid key={item} category={item} />
+                    })
+                }
+            </div>
         </>
     )
 }
