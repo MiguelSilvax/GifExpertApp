@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 
 export const AddCategory = ({ onNewCategory }) => {
@@ -9,18 +9,18 @@ export const AddCategory = ({ onNewCategory }) => {
         setText(target.value);
     }
 
-    const onFormSubmit = (event) => {
-        if (text === "") return
+    const onFormSubmit = ( event ) => {
+        if (text === '') return
         event.preventDefault();
         onNewCategory(text);
-        setText("");
+        setText('');
     };
 
 
     return (
 
         <form
-            onSubmit={event => onFormSubmit(event)}
+            onSubmit={ onFormSubmit }
         >
             <input
                 id='myTextField'

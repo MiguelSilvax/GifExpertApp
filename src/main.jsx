@@ -6,8 +6,8 @@ import './helpers/EnterKey';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    // <StrictMode>
+    <StrictMode>
         <Categories />
-    // </StrictMode>
+    </StrictMode>
 );
 

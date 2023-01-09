@@ -32,8 +32,7 @@ export const Categories = () => {
 
     return (
         <>
-            <h1>Encuentra tu Gif</h1>
-
+            <h1 className='title'>Encuentra tu Gif ! &#128125;</h1>
             <AddCategory
                 onNewCategory={event => addNewCategory(event)}
             />
