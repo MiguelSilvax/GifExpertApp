@@ -23,7 +23,7 @@ import { GifGrid } from './components/GifGrid';
 
 export const Categories = () => {
 
-    const [inputCategory, setCategory] = useState([]);
+    const [inputCategory, setCategory] = useState(["naruto"]);
 
     const addNewCategory = (event) => {
         if (inputCategory.includes(event)) return;
@@ -39,8 +39,11 @@ export const Categories = () => {
 
             <div>
                 {
-                    inputCategory.map((item, index) => {
-                        return <GifGrid key={item} category={item} />
+                    inputCategory.map( item => {
+                        return <GifGrid 
+                        key = { item } 
+                        category = { item } 
+                        />
                     })
                 }
             </div>

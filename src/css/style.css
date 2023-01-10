@@ -45,9 +45,8 @@ h3 {
     width: 100%;
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 50px;
+    gap: 20px;
     row-gap: 5px;
-    grid-column-end: span 5;
 }
 
 .card{
@@ -58,5 +57,5 @@ h3 {
 
 .card > img {
     width: 500px;
-    border-radius: 20px;
+    border-radius: 20px; 
 }
