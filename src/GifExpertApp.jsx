@@ -18,12 +18,11 @@
 
 
 import { useState } from 'react'
-import { AddCategory } from './components/AddCategory';
-import { GifGrid } from './components/GifGrid';
+import { AddCategory, GifGrid } from './components';
 
 export const Categories = () => {
 
-    const [inputCategory, setCategory] = useState(["naruto"]);
+    const [inputCategory, setCategory] = useState([]);
 
     const addNewCategory = (event) => {
         if (inputCategory.includes(event)) return;
