@@ -7,7 +7,7 @@ npm Version : <b>9.2.0<b/>
 <br/>
 
 <p>Este es mi repositorio del proyecto de GiExpertApp de React</p>
-<p>Uso de API Gifhy</p>
+<p>Uso de API Giphy</p>
 
 
 
